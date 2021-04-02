@@ -1,0 +1,37 @@
+from random import randint   #첫번째 방법
+a = randint(1, 20)
+count = 4
+count2 = 1
+while count >= 1:
+    b = int(input("기회가 %d번 남았습니다. 1~20 사이의 숫자를 맞춰보세요: " %(count)))
+    if a == b:
+        print("축하합니다. %d번만에 숫자를 맞추셨습니다." %(count2))
+    elif a < b:
+        print("Down")
+        count = count - 1
+        count2 = count2 + 1
+    elif a > b:
+        print("Up")
+        count = count - 1
+        count2 = count2 + 1
+    if count == 0:
+        print("아쉽습니다. 정답은 %d였습니다." %(a))
+
+
+
+from random import randint    #두번째 방법
+a = randint(1, 20)
+chance = 1
+while chance <= 4:
+    b = int(input("기회가 %d번 남았습니다. 1~20 사이의 숫자를 맞춰보세요: " %(5 - chance)))
+    if a == b:
+        print("축하합니다. %d번만에 숫자를 맞추셨습니다." %(chance))
+        chance = 6
+    elif a <= b:
+        print("Down")
+        chance = chance + 1
+    elif a >= b:
+        print("Up")
+        chance = chance + 1
+    if chance == 5:
+        print("아쉽습니다. 정답은 %d였습니다." %(a))
